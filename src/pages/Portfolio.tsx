@@ -53,7 +53,7 @@ export function Portfolio() {
 
   return (
     <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#030303]">
-      <div className="text-center max-w-4xl mx-auto mb-32">
+      <div className="text-center max-w-4xl mx-auto mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export function Portfolio() {
         </motion.div>
       </div>
 
-      <div className="space-y-48">
+      <div className="space-y-24">
         {projects.map((project, index) => (
           <motion.div 
             key={project.id}
@@ -80,7 +80,7 @@ export function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 lg:gap-24 items-center`}
+            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}
           >
             <div className="flex-1 w-full relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 blur-3xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -100,46 +100,46 @@ export function Portfolio() {
               </div>
             </div>
             
-            <div className="flex-1 w-full space-y-10">
-              <div className="space-y-4">
-                <span className="text-blue-400 font-bold tracking-[0.2em] uppercase text-xs block">{project.category}</span>
-                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">{project.title}</h2>
-                <p className="text-2xl text-gray-300 font-light leading-relaxed">{project.desc}</p>
+            <div className="flex-1 w-full space-y-8">
+              <div className="space-y-3">
+                <span className="text-blue-400 font-bold tracking-[0.2em] uppercase text-[10px] block">{project.category}</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">{project.title}</h2>
+                <p className="text-lg text-gray-400 font-light leading-relaxed">{project.desc}</p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-4 border-y border-white/5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-y border-white/5">
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Desafío</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">{project.problem}</p>
+                  <h3 className="text-white/30 font-bold text-[10px] uppercase tracking-widest">El Desafío</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">{project.problem}</p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Implementación</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">{project.solution}</p>
+                  <h3 className="text-white/30 font-bold text-[10px] uppercase tracking-widest">Ingeniería</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed font-light">{project.solution}</p>
                 </div>
               </div>
               
-              <div className="space-y-6">
-                <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Métricas de Éxito</h3>
-                <div className="grid grid-cols-1 gap-4">
-                  {project.results.map((result, i) => (
-                    <div key={i} className="flex items-center gap-4 obsidian-glass p-4 rounded-xl border-white/5">
-                      <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 className="w-4 h-4 text-green-400" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <h3 className="text-white/30 font-bold text-[10px] uppercase tracking-widest">Impacto Real</h3>
+                  <div className="space-y-3">
+                    {project.results.map((result, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-500/70" />
+                        <span className="text-gray-300 text-xs font-medium">{result}</span>
                       </div>
-                      <span className="text-gray-200 font-medium">{result}</span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-              
-              <div className="space-y-6">
-                <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Stack Tecnológico</h3>
-                <div className="flex flex-wrap gap-3">
-                  {project.tech.map((tech, i) => (
-                    <span key={i} className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-blue-300/80 tracking-wide">
-                      {tech}
-                    </span>
-                  ))}
+                
+                <div className="space-y-6">
+                  <h3 className="text-white/30 font-bold text-[10px] uppercase tracking-widest">Stack</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech, i) => (
+                      <span key={i} className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[10px] font-bold text-blue-300/60 uppercase tracking-tighter">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
               
