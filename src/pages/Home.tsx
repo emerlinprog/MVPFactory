@@ -39,7 +39,7 @@ export function Home() {
       <div className="hero-glow" />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-52 lg:pb-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="relative pt-40 pb-32 lg:pt-64 lg:pb-52 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function Home() {
               <span className="gradient-text">a la velocidad de la luz.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-400 mb-14 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl md:text-2xl text-gray-400 mb-16 max-w-3xl mx-auto leading-relaxed font-light">
               En <span className="text-white font-semibold">MVP FActory</span>, transformamos tu visión en software funcional en semanas, no meses. Arquitecturas premium diseñadas para escalar.
             </p>
             
@@ -142,7 +142,7 @@ export function Home() {
       </section>
 
       {/* Problem Section */}
-      <section className="py-32 relative z-10 bg-[#050505]">
+      <section className="section-padding relative z-10 bg-[#050505]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-white">El desarrollo lento es el <br /><span className="text-red-500/80">asesino de las startups.</span></h2>
@@ -173,7 +173,7 @@ export function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-32 relative">
+      <section className="section-padding relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-24">
             <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-white">Ingeniería <span className="gradient-text">High-End</span></h2>
@@ -200,7 +200,7 @@ export function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-32 bg-[#050505] relative overflow-hidden">
+      <section className="section-padding bg-[#050505] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-10">
             <div className="max-w-2xl">
@@ -241,7 +241,7 @@ export function Home() {
       </section>
 
       {/* Portfolio Highlight */}
-      <section className="py-40 relative">
+      <section className="section-padding relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <motion.div
@@ -284,7 +284,7 @@ export function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 relative overflow-hidden">
+      <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <motion.div

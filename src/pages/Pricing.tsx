@@ -60,7 +60,7 @@ export function Pricing() {
   ];
 
   return (
-    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#030303]">
+    <div className="section-padding px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#030303]">
       <div className="text-center max-w-4xl mx-auto mb-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
