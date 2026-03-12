@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ExternalLink, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ExternalLink, CheckCircle2, ArrowRight, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Portfolio() {
@@ -7,135 +7,145 @@ export function Portfolio() {
     {
       id: "rentasmart",
       title: "RentaSmart",
-      category: "Plataforma SaaS",
-      desc: "Gestión de alquileres para propietarios y tenants.",
-      problem: "Los propietarios perdían tiempo gestionando cobros, contratos y mantenimiento de forma manual o con hojas de cálculo.",
-      solution: "Una plataforma centralizada que automatiza contratos, pagos recurrentes y comunicación con tenants.",
-      tech: ["Supabase", "React", "Vercel", "Stripe", "Tailwind CSS"],
+      category: "Plataforma SaaS Elite",
+      desc: "Ecosistema de gestión de Real Estate automatizado al 100%.",
+      problem: "Fragmentación de datos y procesos manuales que ralentizaban la escalabilidad de portfolios inmobiliarios.",
+      solution: "Arquitectura centralizada con automatización de contratos inteligentes, conciliación bancaria y portal de inquilinos.",
+      tech: ["Next.js 14", "Supabase", "Stripe Connect", "Resend", "Tailwind CSS"],
       results: [
-        "Reducción del 80% en tiempo de gestión",
-        "Aumento del 30% en pagos puntuales",
-        "Onboarding de tenants 100% digital"
+        "80% de ahorro en carga administrativa",
+        "Tasa de cobro puntual incrementada al 98%",
+        "Gestión de incidencias 3x más rápida"
       ],
-      image: "https://picsum.photos/seed/dashboard1/800/600?blur=2"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426"
     },
     {
       id: "sistemas-internos",
-      title: "LogisFlow",
-      category: "Sistema Interno",
-      desc: "Control de inventario y logística para retail.",
-      problem: "Descoordinación entre almacenes y tiendas físicas causando quiebres de stock y pérdida de ventas.",
-      solution: "Dashboard en tiempo real con alertas predictivas de inventario y optimización de rutas de entrega.",
-      tech: ["PostgreSQL", "Node.js", "React", "AWS", "Google Maps API"],
+      title: "LogisFlow AI",
+      category: "Infraestructura Logística",
+      desc: "Soberanía de datos y optimización de cadena de suministro en tiempo real.",
+      problem: "Falta de visibilidad predictiva en almacenes distribuidos, causando roturas de stock críticas.",
+      solution: "Engine de IA para predicción de demanda integrado con dashboards de alta fidelidad y control de flotas GPS.",
+      tech: ["React Premium", "Node.js", "PostgreSQL", "Google Cloud Vision", "MQTT"],
       results: [
-        "Reducción del 45% en quiebres de stock",
-        "Optimización de rutas en un 20%",
-        "Visibilidad total de la cadena de suministro"
+        "Reducción de stock muerto en un 35%",
+        "Optimización de rutas de última milla (22%)",
+        "Visibilidad total E2E (End-to-End)"
       ],
-      image: "https://picsum.photos/seed/logistics/800/600?blur=2"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070"
     },
     {
       id: "automatizaciones",
-      title: "AutoLead",
-      category: "Automatización",
-      desc: "Calificación y enrutamiento de leads B2B.",
-      problem: "El equipo de ventas perdía horas calificando leads manualmente, retrasando el contacto inicial.",
-      solution: "Workflow automatizado que enriquece datos del lead, lo califica con IA y lo asigna al vendedor adecuado.",
-      tech: ["Make", "OpenAI", "HubSpot", "Slack API"],
+      title: "AutoLead Engine",
+      category: "Automatización Inteligente",
+      desc: "Pipeline de ventas potenciado por Large Language Models.",
+      problem: "Inundación de leads no calificados que drenaban los recursos del equipo comercial senior.",
+      solution: "Agentes de IA autónomos que pre-califican, enriquecen y enrutan oportunidades en segundos.",
+      tech: ["OpenAI API", "Make.com", "Pinecone", "HubSpot SDK"],
       results: [
-        "Tiempo de respuesta reducido de horas a minutos",
-        "Aumento del 25% en tasa de conversión",
-        "Ahorro de 15 horas semanales por vendedor"
+        "Respuesta inicial en < 30 segundos",
+        "Incremento del 40% en SQLs (Sales Qualified Leads)",
+        "Ahorro de 50+ horas mensuales por SDR"
       ],
-      image: "https://picsum.photos/seed/automation/800/600?blur=2"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=2070"
     }
   ];
 
   return (
-    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="text-center max-w-3xl mx-auto mb-20">
-        <motion.h1 
+    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#030303]">
+      <div className="text-center max-w-4xl mx-auto mb-32">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+          transition={{ duration: 0.8 }}
         >
-          Nuestro <span className="gradient-text">Portafolio</span>
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-xl text-gray-400"
-        >
-          Casos de éxito y proyectos recientes donde hemos transformado ideas en productos digitales escalables.
-        </motion.p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full obsidian-glass text-sm text-blue-400 mb-8 border-blue-500/20">
+            <Briefcase className="w-4 h-4" />
+            Casos de Estudio
+          </div>
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter leading-tight text-white">
+            Ingeniería que <br /> <span className="gradient-text">Define Mercados.</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+            Una selección de productos digitales que hemos diseñado, desarrollado y escalado para fundadores visionarios.
+          </p>
+        </motion.div>
       </div>
 
-      <div className="space-y-32">
+      <div className="space-y-48">
         {projects.map((project, index) => (
           <motion.div 
             key={project.id}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 lg:gap-24 items-center`}
           >
-            <div className="flex-1 w-full">
-              <div className="rounded-2xl overflow-hidden border border-white/10 relative group">
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500 z-10" />
+            <div className="flex-1 w-full relative">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/10 to-purple-500/10 blur-3xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="rounded-[2.5rem] overflow-hidden border border-white/10 obsidian-glass relative group shadow-2xl aspect-[4/3]">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10" />
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute bottom-8 left-8 z-20">
+                  <span className="px-4 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold text-white uppercase tracking-widest">
+                    Live Project
+                  </span>
+                </div>
               </div>
             </div>
             
-            <div className="flex-1 w-full space-y-8">
-              <div>
-                <span className="text-blue-400 font-medium tracking-wider uppercase text-sm mb-2 block">{project.category}</span>
-                <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
-                <p className="text-xl text-gray-300">{project.desc}</p>
+            <div className="flex-1 w-full space-y-10">
+              <div className="space-y-4">
+                <span className="text-blue-400 font-bold tracking-[0.2em] uppercase text-xs block">{project.category}</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">{project.title}</h2>
+                <p className="text-2xl text-gray-300 font-light leading-relaxed">{project.desc}</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-4 border-y border-white/5">
+                <div className="space-y-3">
+                  <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Desafío</h3>
+                  <p className="text-gray-400 font-light leading-relaxed">{project.problem}</p>
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Implementación</h3>
+                  <p className="text-gray-400 font-light leading-relaxed">{project.solution}</p>
+                </div>
               </div>
               
               <div className="space-y-6">
-                <div>
-                  <h3 className="text-white font-semibold mb-2">El Problema</h3>
-                  <p className="text-gray-400">{project.problem}</p>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold mb-2">La Solución</h3>
-                  <p className="text-gray-400">{project.solution}</p>
-                </div>
-              </div>
-              
-              <div>
-                <h3 className="text-white font-semibold mb-4">Resultados</h3>
-                <ul className="space-y-3">
+                <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Métricas de Éxito</h3>
+                <div className="grid grid-cols-1 gap-4">
                   {project.results.map((result, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{result}</span>
-                    </li>
+                    <div key={i} className="flex items-center gap-4 obsidian-glass p-4 rounded-xl border-white/5">
+                      <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-4 h-4 text-green-400" />
+                      </div>
+                      <span className="text-gray-200 font-medium">{result}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
               
-              <div>
-                <h3 className="text-white font-semibold mb-4">Tecnologías</h3>
-                <div className="flex flex-wrap gap-2">
+              <div className="space-y-6">
+                <h3 className="text-white font-bold text-sm uppercase tracking-widest opacity-50">Stack Tecnológico</h3>
+                <div className="flex flex-wrap gap-3">
                   {project.tech.map((tech, i) => (
-                    <span key={i} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">
+                    <span key={i} className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-blue-300/80 tracking-wide">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
               
-              <div className="pt-4">
-                <Link to="/contacto" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-medium transition-colors">
-                  Quiero un proyecto similar <ArrowRight className="w-4 h-4" />
+              <div className="pt-6">
+                <Link to="/contacto" className="premium-button shadow-none border-white/10 hover:border-blue-500/50">
+                  Quiero una solución similar <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </div>
             </div>
@@ -143,14 +153,15 @@ export function Portfolio() {
         ))}
       </div>
 
-      <div className="mt-32 text-center glass-panel p-12 rounded-3xl border border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 gradient-bg opacity-10" />
-        <h2 className="text-3xl font-bold mb-4 relative z-10">¿Tienes un proyecto en mente?</h2>
-        <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto relative z-10">
-          Revisemos tu idea y diseñemos la arquitectura técnica ideal para tu próximo producto digital.
+      <div className="mt-56 text-center obsidian-glass p-20 rounded-[3.5rem] border border-white/5 relative overflow-hidden shadow-3xl">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[150px] -z-10" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-600/10 blur-[150px] -z-10" />
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight relative z-10">Tu proyecto es nuestro próximo éxito.</h2>
+        <p className="text-gray-400 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed relative z-10">
+          No solo escribimos código, construimos activos digitales que generan valor real desde el primer día.
         </p>
-        <Link to="/contacto" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl gradient-bg text-white font-medium hover:opacity-90 transition-opacity relative z-10">
-          Agendar consultoría <ArrowRight className="w-5 h-5" />
+        <Link to="/contacto" className="premium-button px-14 py-5 text-lg relative z-10">
+          Iniciar mi Transformación <ArrowRight className="ml-2 w-6 h-6" />
         </Link>
       </div>
     </div>

@@ -9,7 +9,8 @@ import {
   ArrowDown,
   ArrowRight,
   Send,
-  AlertCircle
+  AlertCircle,
+  Gem
 } from 'lucide-react';
 import { useState, FormEvent, ChangeEvent } from 'react';
 
@@ -76,79 +77,80 @@ export function Contact() {
   };
 
   return (
-    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-[#030303]">
       {/* 1. Hero Section */}
-      <div className="text-center max-w-4xl mx-auto mb-24">
-        <motion.h1 
+      <div className="text-center max-w-5xl mx-auto mb-32">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
+          transition={{ duration: 0.8 }}
         >
-          Inicia tu <span className="gradient-text">Proyecto de Software</span>
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-xl text-gray-300 mb-6"
-        >
-          Construimos plataformas MVP SaaS y sistemas de automatización para startups y empresas. Antes de agendar una consultoría, por favor completa este formulario de calificación de proyecto.
-        </motion.p>
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-200 mb-10 max-w-3xl mx-auto"
-        >
-          <p className="text-sm md:text-base">
-            Para asegurar el éxito de cada proyecto, trabajamos solo con iniciativas que tienen un objetivo definido, un presupuesto realista y un tomador de decisiones activo.
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full obsidian-glass text-sm text-blue-400 mb-8 border-blue-500/20">
+            <Gem className="w-4 h-4" />
+            Admisión de Proyectos Elite
+          </div>
+          <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-tight text-white">
+            Forjemos tu <br /> <span className="gradient-text">Próximo Hit.</span>
+          </h1>
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed mb-12">
+            No somos una agencia masiva. Somos un laboratorio de ingeniería selectivo. 
+            Antes de agendar, aseguremos que tu visión y nuestra ejecución son el match perfecto.
           </p>
-        </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-col sm:flex-row justify-center gap-4"
-        >
-          <button onClick={scrollToForm} className="px-8 py-4 rounded-xl gradient-bg text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-            Iniciar Evaluación de Proyecto <ArrowDown className="w-5 h-5" />
-          </button>
-          <button onClick={scrollToProfile} className="px-8 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-colors flex items-center justify-center">
-            Descubre si tu proyecto califica
-          </button>
+          
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            <button onClick={scrollToForm} className="premium-button px-12 py-5 text-lg">
+              Iniciar Auditoría de Proyecto <ArrowDown className="ml-2 w-5 h-5" />
+            </button>
+            <button onClick={scrollToProfile} className="px-10 py-5 rounded-2xl obsidian-glass border-white/5 text-white font-bold hover:bg-white/5 transition-all flex items-center justify-center">
+              Requisitos de Calificación
+            </button>
+          </div>
         </motion.div>
       </div>
 
       {/* 2. Ideal Client Profile Section */}
-      <section id="ideal-profile" className="mb-24 scroll-mt-32">
-        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section id="ideal-profile" className="mb-40 scroll-mt-32">
+        <div className="obsidian-glass p-12 md:p-20 rounded-[3rem] border border-white/5 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] -z-10 group-hover:bg-blue-500/10 transition-all duration-700" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">¿Está listo tu proyecto?</h2>
-              <p className="text-gray-400 text-lg mb-6">
-                Trabajamos mejor con proyectos que cumplen ciertas condiciones. Buscamos colaborar con fundadores y empresas que tienen:
+              <span className="text-blue-500 text-xs font-black tracking-[0.3em] uppercase block mb-4">The Ideal Partner</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white tracking-tight leading-tight">¿Está listo tu proyecto para el Factory?</h2>
+              <p className="text-gray-400 text-xl font-light leading-relaxed mb-10">
+                Maximizamos resultados trabajando con fundadores que entienden el valor de la ingeniería de precisión. Buscamos:
               </p>
-              <ul className="space-y-3 mb-8 text-gray-300">
-                <li className="flex items-start gap-2"><span className="text-blue-400 mt-1">•</span> Un problema o idea clara</li>
-                <li className="flex items-start gap-2"><span className="text-blue-400 mt-1">•</span> Un objetivo definido</li>
-                <li className="flex items-start gap-2"><span className="text-blue-400 mt-1">•</span> Disponibilidad para colaborar durante el desarrollo</li>
-                <li className="flex items-start gap-2"><span className="text-blue-400 mt-1">•</span> Un presupuesto realista</li>
-                <li className="flex items-start gap-2"><span className="text-blue-400 mt-1">•</span> Una persona responsable de las decisiones del proyecto</li>
+              <ul className="space-y-6 text-gray-300">
+                {[
+                  "Visión clara del problema core a resolver.",
+                  "Compromiso real con la agilidad y el feedback.",
+                  "Respeto por los estándares de ingeniería moderna.",
+                  "Presupuesto alineado con un producto de alta calidad.",
+                  "Liderazgo con capacidad de toma de decisiones rápida."
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-4">
+                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+                    <span className="text-lg font-light tracking-wide">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="bg-[#0a0a0a] p-8 rounded-2xl border border-white/5">
-              <h3 className="text-xl font-semibold mb-6 text-white">Checklist de preparación:</h3>
-              <ul className="space-y-4">
+            <div className="bg-white/5 p-12 rounded-[2.5rem] border border-white/5 backdrop-blur-3xl">
+              <h3 className="text-2xl font-bold mb-8 text-white tracking-tight flex items-center gap-3">
+                <CheckCircle2 className="w-8 h-8 text-blue-500" /> Pre-Flight Checklist
+              </h3>
+              <ul className="space-y-6">
                 {[
-                  "Puedo explicar el problema que quiero resolver",
-                  "Tengo una idea inicial del producto o sistema",
-                  "Tengo un presupuesto asignado para el desarrollo",
-                  "Puedo participar en las decisiones durante el proyecto",
-                  "Entiendo que la primera versión será un MVP"
+                  "Puedo definir mi éxito en 1 sola oración.",
+                  "Entiendo que el MVP es el inicio, no el final.",
+                  "Tengo capital listo para invertir en tecnología crítica.",
+                  "Tengo disponibilidad de 3h semanales para syncing.",
+                  "Busco un partner técnico, no solo un proveedor."
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-6 h-6 text-green-400 flex-shrink-0" />
-                    <span className="text-gray-300">{item}</span>
+                  <li key={i} className="flex items-start gap-4">
+                    <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle2 className="w-4 h-4 text-blue-500" />
+                    </div>
+                    <span className="text-gray-400 font-light leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -157,271 +159,199 @@ export function Contact() {
         </div>
       </section>
 
-      {/* 3. What We Build */}
-      <section className="mb-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Lo que construimos</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Desarrollamos proyectos utilizando arquitectura moderna: Supabase, APIs, herramientas de IA y sistemas serverless para garantizar escalabilidad y rendimiento.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: LayoutDashboard, title: "Plataformas MVP SaaS" },
-            { icon: Cpu, title: "Sistemas de automatización de procesos" },
-            { icon: TerminalSquare, title: "Herramientas internas de negocio" },
-            { icon: Code2, title: "Prototipos de productos digitales" }
-          ].map((item, i) => (
-            <div key={i} className="glass-panel p-6 rounded-2xl border border-white/10 text-center hover:border-blue-500/30 transition-colors">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center mx-auto mb-4">
-                <item.icon className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-200">{item.title}</h3>
+      {/* 4 & 7. Scope Section */}
+      <section className="mb-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="obsidian-glass p-12 rounded-[2.5rem] border border-white/5 relative overflow-hidden">
+            <div className="w-16 h-16 rounded-2xl bg-blue-500/10 text-blue-400 flex items-center justify-center mb-8">
+              <CheckCircle2 className="w-8 h-8" />
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 4 & 7. What We Do NOT Offer & Scope */}
-      <section className="mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="glass-panel p-8 rounded-3xl border border-white/10">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <CheckCircle2 className="w-6 h-6 text-green-400" /> Lo que SÍ incluimos
-            </h2>
-            <p className="text-gray-400 mb-6">Nuestro alcance de trabajo estándar cubre los fundamentos para lanzar con éxito:</p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                Arquitectura del sistema y base de datos
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                Desarrollo completo del MVP
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                Despliegue inicial en producción
-              </li>
-            </ul>
+            <h2 className="text-3xl font-bold mb-6 text-white tracking-tight">Our Full-Service Scope</h2>
+            <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">Entregamos un sistema completo, listo para escalar y recibir usuarios reales.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                "Arquitectura Cloud Nativa",
+                "Frontend de Alto Impacto",
+                "Backend de Nivel Enterprise",
+                "QA & Stress Testing",
+                "CI/CD Pipelines",
+                "Tech Documentation"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/5">
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                  <span className="text-sm text-gray-300 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
           
-          <div className="glass-panel p-8 rounded-3xl border border-red-500/20 bg-red-500/5">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <XCircle className="w-6 h-6 text-red-400" /> Lo que NO ofrecemos
-            </h2>
-            <p className="text-gray-400 mb-6">Para mantener la calidad y velocidad, no proveemos los siguientes servicios. Cualquier funcionalidad adicional se maneja a través de un proceso de solicitud de cambios.</p>
+          <div className="obsidian-glass p-12 rounded-[2.5rem] border border-red-500/10 relative overflow-hidden bg-red-500/[0.02]">
+            <div className="w-16 h-16 rounded-2xl bg-red-500/10 text-red-500/80 flex items-center justify-center mb-8">
+              <XCircle className="w-8 h-8" />
+            </div>
+            <h2 className="text-3xl font-bold mb-6 text-white tracking-tight">Out of Scope Policies</h2>
+            <p className="text-gray-400 text-lg font-light leading-relaxed mb-8">Definimos límites claros para garantizar la velocidad de entrega y el enfoque en el producto.</p>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                Peticiones de desarrollo o revisiones ilimitadas
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                Sistemas de nivel empresarial desde el primer día
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                Servicios de marketing o crecimiento del producto (adquisición de usuarios)
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                Soporte técnico ilimitado
-              </li>
-              <li className="flex items-start gap-3 text-gray-300">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                Infraestructura compleja sin planificación previa
-              </li>
+              {[
+                "Revisiones de diseño ilimitadas sin data.",
+                "Marketing digital o adquisición de tráfico.",
+                "Soporte técnico legacy de otros proveedores.",
+                "Desarrollo de hardware o embedded systems.",
+                "Consultoría legal o de cumplimiento regulatorio."
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-4 text-gray-400/80 font-light italic">
+                  <div className="w-1 h-1 rounded-full bg-red-500/30" />
+                  <span className="text-sm">{item}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
       </section>
 
-      {/* 6. Project Process Section */}
-      <section className="mb-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Proceso de Desarrollo</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            La colaboración estrecha con el cliente es un requisito fundamental durante todo este proceso.
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-          {["Discovery", "Arquitectura", "Desarrollo", "Testing", "Deployment", "Iteración"].map((step, i) => (
-            <div key={i} className="flex items-center gap-4 md:gap-8">
-              <div className="px-4 py-2 rounded-lg bg-[#111] border border-white/10 text-gray-300 font-medium">
-                {i + 1}. {step}
-              </div>
-              {i < 5 && <ArrowRight className="w-5 h-5 text-gray-600 hidden md:block" />}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5 & 8. Project Qualification Form */}
-      <section id="qualification-form" className="scroll-mt-32 max-w-4xl mx-auto">
-        <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10">
-          <div className="mb-10 text-center">
-            <h2 className="text-3xl font-bold mb-4">Formulario de Calificación</h2>
-            <p className="text-gray-400">Por favor, completa todos los campos con el mayor detalle posible.</p>
+      {/* Form Section */}
+      <section id="qualification-form" className="scroll-mt-32 max-w-5xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="obsidian-glass p-12 md:p-20 rounded-[3.5rem] border border-white/5 shadow-3xl"
+        >
+          <div className="mb-20 text-center">
+            <span className="text-blue-500 text-[10px] font-black uppercase tracking-[0.4em] block mb-4">Admission Form</span>
+            <h2 className="text-5xl font-bold mb-6 text-white tracking-tighter">Inicia la Evaluación.</h2>
+            <p className="text-gray-400 text-xl font-light">Completa con rigor técnico. Buscamos los detalles que hacen la diferencia.</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-10">
-            {/* Basic Information */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-white border-b border-white/10 pb-2">Información Básica</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-gray-300">Nombre completo *</label>
-                  <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white" />
+          <form onSubmit={handleSubmit} className="space-y-16">
+            <div className="space-y-12">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold border border-blue-500/20">01</div>
+                <h3 className="text-2xl font-bold text-white tracking-tight">Identity & Context</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Tu Nombre</label>
+                  <input type="text" name="name" required value={formData.name} onChange={handleChange} placeholder="John Doe"
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white transition-all placeholder:text-gray-600 font-light" />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-300">Email profesional *</label>
-                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white" />
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Email de Negocio</label>
+                  <input type="email" name="email" required value={formData.email} onChange={handleChange} placeholder="john@startup.com"
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white transition-all placeholder:text-gray-600 font-light" />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="company" className="text-sm font-medium text-gray-300">Empresa / Nombre del proyecto *</label>
-                  <input type="text" id="company" name="company" required value={formData.company} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white" />
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Proyecto / Startup</label>
+                  <input type="text" name="company" required value={formData.company} onChange={handleChange} placeholder="Nova Stealth Corp"
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white transition-all placeholder:text-gray-600 font-light" />
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="country" className="text-sm font-medium text-gray-300">País *</label>
-                  <input type="text" id="country" name="country" required value={formData.country} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white" />
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">País de Operación</label>
+                  <input type="text" name="country" required value={formData.country} onChange={handleChange} placeholder="España, USA, MX..."
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white transition-all placeholder:text-gray-600 font-light" />
                 </div>
               </div>
             </div>
 
-            {/* Project Details */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-white border-b border-white/10 pb-2">Detalles del Proyecto</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="projectType" className="text-sm font-medium text-gray-300">Tipo de proyecto *</label>
-                  <select id="projectType" name="projectType" required value={formData.projectType} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="saas">Plataforma SaaS</option>
-                    <option value="internal">Sistema interno de negocio</option>
-                    <option value="automation">Automatización</option>
-                    <option value="prototype">Prototipo / MVP</option>
-                    <option value="website">Sitio web / Landing</option>
-                    <option value="not-sure">No estoy seguro</option>
+            <div className="space-y-12">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold border border-blue-500/20">02</div>
+                <h3 className="text-2xl font-bold text-white tracking-tight">Product Architecture</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Project Category</label>
+                  <select name="projectType" required value={formData.projectType} onChange={handleChange}
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white appearance-none font-light">
+                    <option value="saas">SaaS Ecosystem</option>
+                    <option value="internal">Inner Business Logic</option>
+                    <option value="automation">AI & Flow Automation</option>
+                    <option value="prototype">High-Fidelity MVP</option>
                   </select>
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="projectStage" className="text-sm font-medium text-gray-300">Fase del proyecto *</label>
-                  <select id="projectStage" name="projectStage" required value={formData.projectStage} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="idea">Fase de idea</option>
-                    <option value="concept">Concepto definido</option>
-                    <option value="prototype">Prototipo diseñado</option>
-                    <option value="existing">Producto existente</option>
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Current Roadmap Stage</label>
+                  <select name="projectStage" required value={formData.projectStage} onChange={handleChange}
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white appearance-none font-light">
+                    <option value="idea">Conceptual Idea</option>
+                    <option value="concept">Verified Concept</option>
+                    <option value="prototype">Wired / Designed</option>
+                    <option value="existing">Scaling Existing Product</option>
                   </select>
                 </div>
               </div>
-
-              <div className="space-y-2">
-                <label htmlFor="problemDefinition" className="text-sm font-medium text-gray-300">Describe el problema que quieres resolver *</label>
-                <textarea id="problemDefinition" name="problemDefinition" required value={formData.problemDefinition} onChange={handleChange} rows={3}
-                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white resize-none" />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="keyFeatures" className="text-sm font-medium text-gray-300">¿Qué funcionalidades principales esperas en la primera versión? *</label>
-                <textarea id="keyFeatures" name="keyFeatures" required value={formData.keyFeatures} onChange={handleChange} rows={3}
-                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white resize-none" />
+              <div className="space-y-3">
+                <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Desafío Técnico Principal</label>
+                <textarea name="problemDefinition" required value={formData.problemDefinition} onChange={handleChange} rows={4} placeholder="Describe el obstáculo de ingeniería que frena tu crecimiento..."
+                  className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-3xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white resize-none transition-all placeholder:text-gray-600 font-light" />
               </div>
             </div>
 
-            {/* Logistics & Decision Making */}
-            <div className="space-y-6">
-              <h3 className="text-xl font-semibold text-white border-b border-white/10 pb-2">Logística y Decisiones</h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="budget" className="text-sm font-medium text-gray-300">Rango de presupuesto *</label>
-                  <select id="budget" name="budget" required value={formData.budget} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="under-500">Menos de $500</option>
-                    <option value="500-1500">$500 - $1,500</option>
+            <div className="space-y-12">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center text-sm font-bold border border-blue-500/20">03</div>
+                <h3 className="text-2xl font-bold text-white tracking-tight">Scalability & Logistics</h3>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Inversión Planificada</label>
+                  <select name="budget" required value={formData.budget} onChange={handleChange}
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white appearance-none font-light">
                     <option value="1500-5000">$1,500 - $5,000</option>
                     <option value="5000-10000">$5,000 - $10,000</option>
-                    <option value="above-10000">Más de $10,000</option>
+                    <option value="above-10000">Above $10,000</option>
                   </select>
                 </div>
-                <div className="space-y-2">
-                  <label htmlFor="timeline" className="text-sm font-medium text-gray-300">Cronograma esperado *</label>
-                  <select id="timeline" name="timeline" required value={formData.timeline} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="2-4-weeks">2 - 4 semanas</option>
-                    <option value="1-2-months">1 - 2 meses</option>
-                    <option value="3-6-months">3 - 6 meses</option>
-                    <option value="flexible">Flexible</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="decisionMaker" className="text-sm font-medium text-gray-300">Tomador de decisiones *</label>
-                  <select id="decisionMaker" name="decisionMaker" required value={formData.decisionMaker} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="me">Soy el tomador de decisiones</option>
-                    <option value="team">Un equipo decide</option>
-                    <option value="partners">Los socios deciden</option>
-                    <option value="not-defined">Aún no definido</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="integrations" className="text-sm font-medium text-gray-300">Integraciones necesarias *</label>
-                  <select id="integrations" name="integrations" required value={formData.integrations} onChange={handleChange}
-                    className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white appearance-none">
-                    <option value="payments">Sistemas de pago</option>
-                    <option value="apis">APIs externas</option>
-                    <option value="crm">CRM</option>
-                    <option value="not-sure">No estoy seguro</option>
+                <div className="space-y-3">
+                  <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Deployment Window</label>
+                  <select name="timeline" required value={formData.timeline} onChange={handleChange}
+                    className="w-full px-6 py-5 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 text-white appearance-none font-light">
+                    <option value="1-2-months">Agresivo (1-2 meses)</option>
+                    <option value="3-6-months">Estratégico (3-6 meses)</option>
+                    <option value="flexible">Flexible / Long-term</option>
                   </select>
                 </div>
               </div>
+            </div>
 
-              <div className="space-y-2">
-                <label htmlFor="finalQuestion" className="text-sm font-medium text-gray-300">¿Por qué buscas ayuda externa para este proyecto? *</label>
-                <textarea id="finalQuestion" name="finalQuestion" required value={formData.finalQuestion} onChange={handleChange} rows={2}
-                  className="w-full px-4 py-3 bg-[#0a0a0a] border border-white/10 rounded-xl focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-white resize-none" />
+            <div className="pt-10 border-t border-white/5">
+              <div className="bg-blue-500/5 border border-blue-500/10 rounded-[2rem] p-8 mb-12 flex gap-6 items-start">
+                <AlertCircle className="w-8 h-8 text-blue-500 flex-shrink-0" />
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  Tratamos cada solicitud con confidencialidad absoluta. Debido a la alta demanda, solo respondemos a proyectos que demuestran un fit técnico y estratégico claro para nuestro stack (Supabase, Next.js, AI Agents).
+                </p>
               </div>
-            </div>
 
-            {/* Final Notice */}
-            <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-6 flex gap-4 items-start">
-              <AlertCircle className="w-6 h-6 text-blue-400 flex-shrink-0 mt-0.5" />
-              <p className="text-blue-200 text-sm md:text-base">
-                Debido a la cantidad de solicitudes que recibimos, revisamos cuidadosamente cada envío. Solo contactaremos proyectos que se alineen con nuestras capacidades y alcance.
-              </p>
+              <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className="premium-button w-full py-6 text-xl tracking-[0.1em] shadow-[0_20px_50px_rgba(59,130,246,0.2)] disabled:opacity-50"
+              >
+                {isSubmitting ? (
+                  <span className="w-8 h-8 border-3 border-white/30 border-t-white rounded-full animate-spin" />
+                ) : (
+                  <>Enviar Evaluación a Ingeniería <Send className="ml-3 w-6 h-6" /></>
+                )}
+              </button>
             </div>
-
-            <button 
-              type="submit" 
-              disabled={isSubmitting}
-              className="w-full py-4 rounded-xl gradient-bg text-white font-bold text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_20px_rgba(59,130,246,0.3)]"
-            >
-              {isSubmitting ? (
-                <span className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              ) : (
-                <>Enviar Solicitud de Proyecto <Send className="w-5 h-5" /></>
-              )}
-            </button>
             
             {isSuccess && (
               <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-6 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-center"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="p-10 rounded-[2.5rem] bg-green-500/5 border border-green-500/20 text-center"
               >
-                <h4 className="font-bold text-lg mb-2">¡Solicitud recibida con éxito!</h4>
-                <p>Hemos recibido los detalles de tu proyecto. Nuestro equipo lo evaluará y te contactaremos pronto si hace match con nuestras capacidades.</p>
+                <div className="w-20 h-20 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center mx-auto mb-8">
+                  <CheckCircle2 className="w-10 h-10" />
+                </div>
+                <h4 className="text-3xl font-bold text-white mb-4 tracking-tighter">Transmisión Exitosa.</h4>
+                <p className="text-gray-400 text-lg font-light leading-relaxed max-w-xl mx-auto">
+                  Tu auditoría de proyecto está en manos de nuestros ingenieros. Revisaremos la viabilidad técnica y te contactaremos vía email en las próximas 48 horas.
+                </p>
               </motion.div>
             )}
           </form>
-        </div>
+        </motion.div>
       </section>
     </div>
   );
